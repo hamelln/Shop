@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsMapper">
+
+	<select id="selectAGoods" parameterType="String" resultType="Goods">
+		select * from goods where name = #{name}
+	</select>
+	
+	<insert id="insertGoods" parameterType="Goods">
+		insert into shopping
+			(goods_id, name, price, img, stock)
+		values
+			(#{goods_id}, #{name}, #{price}, #{img}, #{stock})
+	</insert>
+		
+	<delete id="deleteGoods">
+		delete from goods where goods_id = #{id}
+	</delete>
+	
+	<select id="countGoods" resultType="Integer">
+		select count(*) from goods
+	</select>
+	
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="Member" type="com.moon.model.member.MemberBean"/>
+		<typeAlias alias="Goods" type="com.moon.model.goods.GoodsBean"/>
+		<typeAlias alias="Board" type="com.moon.model.board.BoardBean"/>
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://hamelln-rds.cqjym2gtgcnk.ap-northeast-2.rds.amazonaws.com:3306/moon?serverTimezone=UTC" />
+				<property name="username" value="hamelln" />
+				<property name="password" value="123456789" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mapper/member.xml"/>
+		<mapper resource="mapper/goods.xml"/>
+		<mapper resource="mapper/board.xml"/>
+	</mappers>
+</configuration>

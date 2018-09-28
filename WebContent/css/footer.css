@@ -1,0 +1,9 @@
+@charset "UTF-8";
+#footer{
+	background-color: #b4b4b4;
+}
+#footer p{
+	color: white;
+	text-align: center;
+	font-size: small;
+}

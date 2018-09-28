@@ -1,0 +1,89 @@
+@charset "UTF-8";
+#article_join_top dl{
+	float: left;
+	width: 250px;
+	text-align: center;
+	margin: 0px;
+	box-sizing: border-box;
+	padding: 5px;
+	color: white;
+	border: 2px solid white;
+}
+#check{
+	background-color: #ff9614;
+}
+#non_check{
+	background: #b4b4b4;
+}
+#contract{
+	margin: 0px auto;
+	width: 800px;
+}
+#contract tr th{
+	text-align: left;
+}
+#contract tr td{
+	width: 110px;	
+}
+#contract tr td input{
+	margin: 10px 0px;
+}
+#contract tr td p{
+	color: red;
+	font-size: x-small;
+	float: right;
+}
+#button{
+	width: 800px;
+	margin: 0px auto;
+}
+#all_check{
+	float: left;
+	border: 0px;
+	background-color: #ff9614;
+	color: white;
+}
+#last_button{
+	float: left;
+	border: 0px;
+}
+#next_button{
+	float: right;
+	border: 0px;
+	background-color: #ff9614;
+	color: white;
+}
+
+
+/* join_enter */
+#join_enter{
+	width: 800px;
+	margin: 0px auto;
+}
+#join_enter tr th{
+	width: 200px;
+}
+#join_enter tr td{
+	width: 200px;
+}
+#id, #password, #password_chk, #email_one, #email_two{
+	width: 200px;
+}
+#name, #address_one, #address_two{
+	width: 600px; 
+}
+#id_ch, #pass_ch, #zipcode_ch{
+	border: 0px;
+	background-color: #ff9614;
+	color: white;
+}
+
+/* join_result */
+#join_result{
+	border: 1px solid #b4b4b4;
+	border-radius: 0.5cm;
+	padding: 15px;
+	width: 600px;
+	margin: 10px auto;
+	font-size: small;
+}

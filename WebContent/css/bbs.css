@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.btn-group.btn-group-justified{
+margin-top: 17%; 
+margin-bottom: 5%;
+}
+.btn.btn-default{
+width: 100px;
+cursor: pointer;
+}
+#badge{
+float: right; 
+background-color: #b4b4b4;
+}
+#badge-wait{
+float: right; 
+background-color: #ff9614;
+}
+
+.list-group-item{
+border: 0; 
+padding: 2px;
+}
+
+#pre-post{
+cursor: pointer; 
+overflow: hidden; 
+text-overflow: ellipsis; 
+white-space: nowrap; 
+width: 300px; 
+height: 20px;	
+}
+
+.glyphicon-comment{
+margin: 1 auto;
+}
+
+.panel-heading{
+background-color: white; 
+background-image: none;
+}
+
+#in-btn{
+width: 100px; margin-left: 5%;
+}
+
+#quest-cursor{
+cursor: pointer;
+}
+
+.container{
+margin-top: 5%; 
+margin-bottom: 5%; 
+height: 100%; 
+overflow: hidden; 
+width: 100%;
+}
+
+.list-group{
+width: 800px; 
+margin: 0 auto;
+}
+
+.panel-group{
+width: 800px; 
+margin: 0 auto;
+}
+
+.thre-page{
+margin: 0 auto; 
+width: 300px; 
+height: 50px;
+}

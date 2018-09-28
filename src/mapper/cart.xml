@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsMapper">
+
+	<select id="selectACart" parameterType="String" resultType="CartBean">
+		select * from cart where item_id = #{item_id}
+	</select>
+	
+	<insert id="insertCart" parameterType="CartBean">
+		insert into cart
+			(item_id, item_price, item_count)
+		values
+			(#{item_id}, #{item_price}, #{item_count})
+	</insert>
+		
+	<delete id="deleteCart" parameterType="String">
+		delete from cart where item_id = #{item_id}
+	</delete>
+	
+	<select id="countGoods" resultType="Integer">
+		select count(*) from cart
+	</select>
+	
+</mapper>

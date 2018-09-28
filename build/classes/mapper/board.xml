@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+<resultMap type="Board" id="BoardList">
+<result property="board_num" column="board_num"/>
+<result property="board_username" column="board_username"/>
+<result property="board_pass" column="board_pass"/>
+<result property="board_title" column="board_title"/>
+<result property="board_content" column="board_content"/>
+<result property="board_file" column="board_file"/>
+<result property="board_re_ref" column="board_re_ref"/>
+<result property="board_re_lev" column="board_re_lev"/>
+<result property="board_re_seq" column="board_re_seq"/>
+<result property="board_readCount" column="board_readCount"/>
+<result property="board_date" column="board_date"/>
+</resultMap>
+
+	<!-- 글 갯수 구하기 -->
+	<select id="getBoardCount" resultType="Integer">
+		select count(*) from board order by board_num
+	</select>
+
+	<!-- 글 목록 뽑아오기 -->
+
+	<!-- <select id="getBoardList" resultMap="BoardList"
+		parameterType="Board">
+		select * from (select board_num,
+		board_username, board_title,
+		board_content, board_file, board_re_ref,
+		board_re_lev, board_re_seq,
+		board_readCount, board_date from
+		(select *
+		from board order by
+		board_re_ref desc, board_re_seq asc) test )
+		list
+		where board_num<![CDATA[ >= ]]>#{page}
+		and board_num <![CDATA[ <= ]]>#{limit}
+	</select> -->
+	
+	<select id="getBoardList" resultMap="BoardList">
+	select * from board
+	</select>
+
+	<!-- 글 내용 읽기 -->
+
+	<select id="getBoard" parameterType="Integer" resultType="Board">
+		select * from board where board_num = #{board_num}
+	</select>
+
+	<insert id="writeBoard" parameterType="Board">
+	insert into board(board_title, board_content)
+	values (#{board_title},#{board_content})
+	</insert>
+
+	<update id="setReply" parameterType="Board">
+	update board set board_re_seq = 
+	board_re_seq+1 where board_re_ref=#{board_re_ref} and board_re_seq<![CDATA[ > ]]>{board_re_seq}
+	</update>
+	
+	<insert id="writeReply" parameterType="Board">
+	insert into board (board_num, board_username, board_pass, board_title,
+	board_content, board_file, board_re_ref, board_re_lev, board_re_seq)
+	values (#{board_num},#{board_username},#{board_pass},#{board_title},#{board_content},
+	#{board_file},#{board_re_ref},#{board_re_lev},#{board_re_seq})
+	</insert>
+	
+	<update id="modifyBoard" parameterType="Board">
+	update board set board_title=#{board_title}, board_content=#{board_content} where board_num=#{board_num}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="Integer">
+	delete from board where board_num=#{board_num}
+	</delete>
+	
+	<update id="readCountUpdate" parameterType="Integer">
+	update board set board_readCount = board_readCount + 1 where board_num = #{board_num}
+	</update>
+	
+</mapper>

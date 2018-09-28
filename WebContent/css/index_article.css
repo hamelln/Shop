@@ -1,0 +1,20 @@
+@charset "UTF-8";
+#newitem{
+	border-bottom: 1px solid gray;
+}
+#newitem center{
+	background-color: #b4b4b4;
+	color: white;
+	padding: 5px;
+}
+#bestitem{
+	border-bottom: 1px solid gray;
+}
+#bestitem center{
+	background-color: #b4b4b4;
+	color: white;
+	padding: 5px;
+}
+#item{
+	float: left; 
+}
